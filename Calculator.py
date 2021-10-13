@@ -1,17 +1,12 @@
-class Sum:
-    def __init__(self, a, b):
-        num1 = int(a)
-        num2 = int(b)
-        result = num1 + num2
-        # return result
-        print(result)
+from tkinter import *
+def hello(event):
+    print("Single Click, Button-l") 
+def quit(event):                           
+    print("Double Click, so let's stop") 
+    import sys; sys.exit() 
 
-    def display(self):
-        print("hai")
-
-f = open("sample2.py","r")
-print(f.read())
-f.close()
-s = Sum(20, 30)
-
-s.display()
+widget = Button(None, text='Mouse Clicks')
+widget.pack()
+widget.bind('<Button-1>', hello)
+widget.bind('<Double-1>', quit) 
+widget.mainloop()
